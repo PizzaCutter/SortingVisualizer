@@ -2,3 +2,5 @@
 .vscode
 *.js
 *.js.map
+.DS_Store
+.html
