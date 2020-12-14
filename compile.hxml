@@ -1,0 +1,6 @@
+-cp src
+-lib heaps
+-js hello.js
+#-hl DataVisualizer.hl
+-main Main
+-debug
