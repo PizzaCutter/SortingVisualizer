@@ -16,7 +16,7 @@ class QuickSortAlgorithm extends SortingAlgorithm {
                 arrayToSort[j] = arrayToSort[i];
                 arrayToSort[i] = tempValue;
 
-                //Sys.sleep(sortingSpeedInSeconds);
+                Sys.sleep(sortingSpeedInSeconds);
             }
         }
 
@@ -24,30 +24,29 @@ class QuickSortAlgorithm extends SortingAlgorithm {
         arrayToSort[i+1] = arrayToSort[high];
         arrayToSort[high] = tempValue;
 
-        //Sys.sleep(sortingSpeedInSeconds);
+        Sys.sleep(sortingSpeedInSeconds);
 
         return (i + 1);
     }
 
     private function quicksort(lo:Int, hi:Int) {
-        // if (lo < hi) {
-        //     var partitionIndex : Int = partition(lo, hi);
-
-        //     quicksort(lo, partitionIndex - 1);
-        //     quicksort(partitionIndex + 1, hi);
-        // }
-
         var i = lo;
         var j = hi;
         var buf = arrayToSort;
         var p = buf[(lo+hi)>>1];
         while( i <= j ) {
-            while( arrayToSort[i] > p ) i++;
-            while( arrayToSort[j] < p ) j--;
+            while( arrayToSort[i] > p ) { 
+                i++;
+            }
+            while( arrayToSort[j] < p ) {
+                j--;
+            }
             if( i <= j ) {
                 var t = buf[i];
                 buf[i++] = buf[j];
                 buf[j--] = t;
+
+                Sys.sleep(sortingSpeedInSeconds);
             }
         }
         if( lo < j ) quicksort( lo, j );

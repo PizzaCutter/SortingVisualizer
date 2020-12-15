@@ -2,8 +2,6 @@
 class BubbleSortAlgorithm extends SortingAlgorithm {
 
     public override function startSort() {
-        #if (target.threaded)
-        //sys.thread.Thread.create(() -> {
         for (i in 0...(itemCount -1)) 
         {
             for (j in 0...(itemCount-i-1))
@@ -17,8 +15,6 @@ class BubbleSortAlgorithm extends SortingAlgorithm {
                 }
             }
         }
-        //});
-        #end
     }
 
     public override function render() {

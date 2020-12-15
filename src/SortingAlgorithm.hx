@@ -6,6 +6,9 @@ class SortingAlgorithm {
 
     // RUNTIME DATA
     var arrayToSort : Array<Int> = new Array<Int>();
+    var thread : sys.thread.Thread;
+
+    public var bDoneSorting : Bool = false;
 
     // RENDERING DATA
     var graphics : h2d.Graphics;
@@ -53,7 +56,6 @@ class SortingAlgorithm {
         return engine.height - getHeightForIndex(index);
     }
     private function getWidth() : Int {
-
         var width = hxd.Window.getInstance().width;
         return Math.round(width / itemCount);
     }
