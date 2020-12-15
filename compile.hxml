@@ -1,6 +1,14 @@
+# class paths
 -cp src
--lib heaps
--js hello.js
-#-hl DataVisualizer.hl
+
+# entry point
 -main Main
--debug
+
+-lib hlsdl
+-lib heaps
+
+# output
+-hl bin/DataVisualizer.hl
+#-hl out/main.c
+#-js hello.js
+#-debug

@@ -7,14 +7,9 @@ class SortingAlgorithm {
     // RUNTIME DATA
     var arrayToSort : Array<Int> = new Array<Int>();
 
-    var timer : Float = 0.0;
-
     // RENDERING DATA
     var graphics : h2d.Graphics;
     var engine : h3d.Engine;
-
-    public var hasStartedSorting : Bool = false;
-    var isDoneSorting : Bool = false;
 
     public function new(inGraphics:h2d.Graphics, inEngine:h3d.Engine) {
         graphics = inGraphics;
@@ -22,6 +17,7 @@ class SortingAlgorithm {
 
         generateArray();
     }
+
 
     public function generateArray() {
         // GENERATE ARRAY
@@ -32,8 +28,6 @@ class SortingAlgorithm {
 
         // SHUFFLE ARRAY
         arrayToSort = shuffleArray(randomArray);
-
-        isDoneSorting = false;
     }
 
     public function shuffleArray(arrayToShuffle:Array<Int>) : Array<Int> {
@@ -67,31 +61,18 @@ class SortingAlgorithm {
         return Math.round(arrayToSort[index] * (engine.height / itemCount));
     }
 
+    public function startSort() {
+
+    }
+
     public function render() {
+        graphics.clear();
+
         for (i in 0...itemCount) {
             graphics.beginFill(0xFFFFFF, 1);
             graphics.lineStyle(1, 0x000000);
             graphics.drawRect(getXPositionForIndex(i), getYPositionForIndex(i), getWidth(), getHeightForIndex(i));
             graphics.endFill();
         }
-    }
-
-    public function update(dt:Float) {
-        if(hasStartedSorting == false && isDoneSorting == false) {
-            timer += dt;
-
-            if(timer>=sortingSpeedInSeconds) {
-                timer -= sortingSpeedInSeconds;
-                sortIteration();
-            }
-        }
-
-        graphics.clear();
-        render();
-
-        Sys.sleep(0.1);
-    }
-
-    private function sortIteration() {
     }
 }
