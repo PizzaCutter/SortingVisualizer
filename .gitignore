@@ -4,3 +4,4 @@
 *.js.map
 .DS_Store
 .html
+*.hl
