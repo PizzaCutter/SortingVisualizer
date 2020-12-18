@@ -1,6 +1,7 @@
 //import hxd.System;
 import SortingAlgorithm.SortingAlgorithm;
 import QuickSortAlgorithm;
+import InsertionSortAlgorithm;
 
 class Main extends hxd.App {
         var sortingAlgorithm : SortingAlgorithm;
@@ -15,10 +16,12 @@ class Main extends hxd.App {
         override function init() {
             graphicsTest = new h2d.Graphics(s2d);
             //sortingAlgorithm = new BubbleSortAlgorithm(new h2d.Graphics(s2d), engine);
-            sortingAlgorithm = new QuickSortAlgorithm(new h2d.Graphics(s2d), engine);
-
+            //sortingAlgorithm = new QuickSortAlgorithm(new h2d.Graphics(s2d), engine);
+            sortingAlgorithm = new InsertionSortAlgorithm(new h2d.Graphics(s2d), engine);
+            
             something(sortingAlgorithm);
         }
+        
 
 
         override function update(dt:Float) {
